@@ -50,10 +50,10 @@ class UserForm:
         browser.open(open)
 
     def __select_state(self, value):
-        dropdown.select('#state', by_text=value)
+        dropdown.Dropdown.select('#state', by_text=value)
 
     def __select_city(self, value):
-        dropdown.select('#city', by_text=value)
+        dropdown.Dropdown.select('#city', by_text=value)
 
     def __required_fields(self, firstname, lastname, email):
         browser.element('#firstName').type(firstname)
@@ -67,18 +67,18 @@ class UserForm:
         browser.element('#currentAddress').type(text)
 
     def __select_gender(self, gender):
-        radiobutton.gender('[name=gender]', gender)
+        radiobutton.Radiobutton.gender('[name=gender]', gender)
 
     def __select_hobby(self, hobby):
-        checkbox.hobby('[for^=hobbies-checkbox]', hobby)
+        checkbox.Checkbox.hobby('[for^=hobbies-checkbox]', hobby)
 
     def __pick_month(self, month):
         browser.element('.react-datepicker__month-select').click()
-        datepicker.date('.react-datepicker__month-select', month)
+        datepicker.Datepicker.date('.react-datepicker__month-select', month)
 
     def __pick_year(self, year):
         browser.element('.react-datepicker__year-select').click()
-        datepicker.date('.react-datepicker__year-select', year)
+        datepicker.Datepicker.date('.react-datepicker__year-select', year)
 
     def __pick_day(self, day):
         browser.element(f'.react-datepicker__day--0{day}').click()
